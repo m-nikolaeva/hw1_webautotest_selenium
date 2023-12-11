@@ -14,6 +14,8 @@ public class TestStandGeekBrains {
     static WebDriver chromeDriver;
     private static final String USERNAME = "Student-9";
     private static final String PASSWORD = "425c57255c";
+
+    private static final String urlBase = "https://test-stand.gb.ru/login";
     private static ChromeOptions chromeOptions;
     private static WebDriverWait wait;
 
@@ -21,7 +23,6 @@ public class TestStandGeekBrains {
     public static void init() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
     }
 
     @BeforeEach
@@ -31,8 +32,7 @@ public class TestStandGeekBrains {
         chromeDriver.manage().window().maximize();
     }
 
-    void login() {
-        String urlBase = "https://test-stand.gb.ru/login";
+    private void login() {
         chromeDriver.get(urlBase);
         WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated
                 (By.cssSelector("form#login input[type='text']")));
@@ -53,7 +53,7 @@ public class TestStandGeekBrains {
     }
 
     @Test
-    void addingGroup() {
+    public void addingGroup() {
         login();
         WebElement createBtn = wait.until(ExpectedConditions.visibilityOfElementLocated
                 (By.cssSelector("button#create-btn")));
@@ -72,8 +72,9 @@ public class TestStandGeekBrains {
                 (By.cssSelector(".form-modal-header button")));
         closeBtn.click();
 
-        wait.until(ExpectedConditions.textToBePresentInElementLocated
-                (By.cssSelector("div.mdc-data-table"), groupName));
+        String tableTitlesXpath = "//table[@aria-label='Tutors list']//tbody/tr/td[text()='%s']";
+        wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath(String.format(tableTitlesXpath, groupName))));
 
         File screenshot = ((TakesScreenshot)chromeDriver).getScreenshotAs(OutputType.FILE);
         try {
