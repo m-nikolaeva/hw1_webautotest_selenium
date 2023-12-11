@@ -60,12 +60,12 @@ public class TestStandGeekBrains {
         createBtn.click();
 
         WebElement groupNameField = wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.cssSelector("div.mdc-dialog__surface input")));
+                (By.cssSelector("form input")));
         String groupName = "NEWGROUP" + System.currentTimeMillis();
         groupNameField.sendKeys(groupName);
 
         WebElement saveBtn = wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.cssSelector("div.submit button")));
+                (By.cssSelector("form div.submit button")));
         saveBtn.click();
 
         WebElement closeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated

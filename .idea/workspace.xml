@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87e7912-b4f0-4b43-ab2f-e18675c8d252" name="Changes" comment="added hw1_selenium">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d87e7912-b4f0-4b43-ab2f-e18675c8d252" name="Changes" comment="corrected hw1_selenium">
       <change beforePath="$PROJECT_DIR$/src/test/java/TestStandGeekBrains.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStandGeekBrains.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +87,20 @@
       <option name="project" value="LOCAL" />
       <updated>1702025599060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="corrected hw1_selenium">
+      <option name="closed" value="true" />
+      <created>1702286279395</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702286279395</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added hw1_selenium" />
-    <option name="LAST_COMMIT_MESSAGE" value="added hw1_selenium" />
+    <MESSAGE value="corrected hw1_selenium" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected hw1_selenium" />
   </component>
 </project>
